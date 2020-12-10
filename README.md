@@ -1,5 +1,5 @@
 ## Getting Started
-This is my first JAVA Project.
+This is my second JAVA Project with DATABASE. The project is made in IntelliJ IDEA with XAMPP [MySQL DATABASE].
 
 It is all about a Library Management System.
 
