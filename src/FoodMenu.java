@@ -82,17 +82,18 @@ public class FoodMenu extends AccessDatabase
             while (true)
             {
                 System.out.print("Type your option [A,C,G] then press ENTER: ");
-                String ch = sc.nextLine();
-                if (ch.charAt(0) == 'A' || ch.charAt(0) == 'a')
+                char ch = sc.next().charAt(0);
+                sc.nextLine();
+                if (ch == 'A' || ch == 'a')
                 {
                     run = true;
                     break;
-                } else if (ch.charAt(0) == 'C' || ch.charAt(0) == 'c')
+                } else if (ch == 'C' || ch == 'c')
                 {
                     changeCategory();
                     run = true;
                     break;
-                } else if (ch.charAt(0) == 'G' || ch.charAt(0) == 'g')
+                } else if (ch == 'G' || ch == 'g')
                 {
                     run = false;
                     break;

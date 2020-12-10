@@ -7,13 +7,13 @@ public class OrderList extends AccessDatabase
     private static String name;
     private static int[] itemNo = new int[30];
     private static int[] quantity = new int[30];
-    private static String itemNo_Quantity ="";
-    private static int totalPrice = 0;
+
     private static Scanner sc = new Scanner(System.in);
 
     static void newOrder()
     {
-
+        String itemNo_Quantity ="";
+        int totalPrice = 0;
         System.out.print("Enter Your Name       : ");
         name = sc.nextLine();
         boolean run = true, run2 =true;
@@ -21,9 +21,10 @@ public class OrderList extends AccessDatabase
         int i;
         for(i=0;run;i++)
         {
-            System.out.print("Enter Item No. of Menu :");
+            System.out.print("Enter Item No. of Menu : ");
             itemNo[i] = sc.nextInt();
-            System.out.print("Enter Quantity         :");
+            sc.nextLine();
+            System.out.print("Enter Quantity         : ");
             quantity[i] = sc.nextInt();
             sc.nextLine();
 
@@ -39,7 +40,7 @@ public class OrderList extends AccessDatabase
             {
                 System.out.print("Type your option [O,C,G] then press ENTER: ");
                 char ch = sc.next().charAt(0);
-                sc.nextLine();
+                //sc.nextLine();
                 if (ch == 'O' || ch == 'o')
                 {
                     break;
@@ -61,7 +62,7 @@ public class OrderList extends AccessDatabase
             if (itemNo[j]<10)
                 itemNo_Quantity += "0"+String.valueOf(itemNo[j])+"-"+String.valueOf(quantity[j])+",";
             else
-            itemNo_Quantity += String.valueOf(itemNo[j])+"-"+String.valueOf(quantity[j])+",";
+                itemNo_Quantity += String.valueOf(itemNo[j])+"-"+String.valueOf(quantity[j])+",";
         }
         if(run2)
         {
@@ -119,6 +120,7 @@ public class OrderList extends AccessDatabase
     }
     static void displayAll()
     {
+        String itemNo_Quantity ="";
         System.out.println("\n*********************************************************************************");
         System.out.format("[ %-77s ]\n", "                             All Past Order List");
         System.out.println("*********************************************************************************\n");
@@ -179,6 +181,7 @@ public class OrderList extends AccessDatabase
 
     static void displayCurrent()
     {
+        String itemNo_Quantity ="";
         System.out.println("\n*********************************************************************************");
         System.out.format("[ %-77s ]\n", "                             Today's Order List");
         System.out.println("*********************************************************************************\n");

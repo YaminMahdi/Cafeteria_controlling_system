@@ -10,13 +10,13 @@ public class HomeDeliveryList extends AccessDatabase
     private static String name;
     private static int[] itemNo = new int[30];
     private static int[] quantity = new int[30];
-    private static String itemNo_Quantity ="";
     private static String location;
     private static int totalPrice = 0;
     private static Scanner sc = new Scanner(System.in);
 
     static void newOrder()
     {
+        String itemNo_Quantity ="";
         System.out.print("Enter Customer Name       : ");
         name = sc.nextLine();
         System.out.print("Where to Delivery?        : ");
@@ -26,9 +26,10 @@ public class HomeDeliveryList extends AccessDatabase
         int i;
         for(i=0;run;i++)
         {
-            System.out.print("Enter Item No. of Menu :");
+            System.out.print("Enter Item No. of Menu : ");
             itemNo[i] = sc.nextInt();
-            System.out.print("Enter Quantity         :");
+            sc.nextLine();
+            System.out.print("Enter Quantity         : ");
             quantity[i] = sc.nextInt();
             sc.nextLine();
             System.out.println("Item Added to Home Delivery List.");
@@ -43,7 +44,7 @@ public class HomeDeliveryList extends AccessDatabase
             {
                 System.out.print("Type your option [O,C,G] then press ENTER: ");
                 char ch = sc.next().charAt(0);
-                sc.nextLine();
+                //sc.nextLine();
                 if (ch == 'O' || ch == 'o')
                 {
                     run = true;
@@ -121,6 +122,7 @@ public class HomeDeliveryList extends AccessDatabase
     }
     static void displayAll()
     {
+        String itemNo_Quantity ="";
         System.out.println("\n*********************************************************************************");
         System.out.format("[ %-77s ]\n", "                          All Past Home Delivery List");
         System.out.println("*********************************************************************************\n");
@@ -181,6 +183,7 @@ public class HomeDeliveryList extends AccessDatabase
 
     static void displayCurrent()
     {
+        String itemNo_Quantity ="";
         System.out.println("\n*********************************************************************************");
         System.out.format("[ %-77s ]\n", "                          Today's Home Delivery List");
         System.out.println("*********************************************************************************\n");

@@ -74,6 +74,8 @@ public class CustomersReview extends AccessDatabase
         {
             throwables.printStackTrace();
         }
+        System.out.println(" Press ENTER to continue.");
+        sc.nextLine();
         addReview();
     }
 
