@@ -90,6 +90,7 @@ public class HomeDeliveryList extends AccessDatabase
                 System.out.format("+-------------------------------------------------------------------------------+\n");
                 System.out.format("| Name         | Location      | Food Names           | Quantity  | Price       |\n");
                 System.out.format("+--------------+---------------+----------------------+-----------+-------------+\n");
+                System.out.format(leftAlignFormat, name, location,"","","");
                 for (i =0;i<itemNo_Quantity.length();i+=5)
                 {
                     String x = Character.toString(itemNo_Quantity.charAt(i))+Character.toString(itemNo_Quantity.charAt(i+1));
@@ -119,6 +120,8 @@ public class HomeDeliveryList extends AccessDatabase
                 throwables.printStackTrace();
             }
         }
+        System.out.print("\nPress ENTER to continue.");
+        sc.nextLine();
     }
     static void displayAll()
     {

@@ -116,6 +116,8 @@ public class OrderList extends AccessDatabase
             {
                 throwables.printStackTrace();
             }
+            System.out.print("\nPress ENTER to continue.");
+            sc.nextLine();
         }
     }
     static void displayAll()
