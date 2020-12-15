@@ -199,21 +199,21 @@ public class HomeDeliveryList extends AccessDatabase
             rs.next();
             String crDate = rs.getString(1);
 
-            rs = st.executeQuery("SELECT * FROM orderlist WHERE date='"+crDate+"'");
+            rs = st.executeQuery("SELECT * FROM homedeliverylist WHERE date='"+crDate+"'");
 
-            String leftAlignFormat = "| %-9s | %-15s | %-21s | %-9s | %-11s |\n";
+            String leftAlignFormat = "| %-12s | %-13s | %-20s | %-9s | %-11s |\n";
             String leftAlignFormat2 = "| %-51s | %-9s   %-11s |\n";
             String categoryFormat = "| %-77s |\n";
             System.out.format("+-------------------------------------------------------------------------------+\n");
-            System.out.format(categoryFormat, "Today's Date: " + crDate);
+            System.out.format(categoryFormat, "Today's Date: " + crDate );
             System.out.format("+-------------------------------------------------------------------------------+\n");
-            System.out.format("| Token No. | Customer Names  | Food Names            | Quantity  | Price       |\n");
-            System.out.format("+-----------+-----------------+-----------------------+-----------+-------------+\n");
+            System.out.format("| Name         | Location      | Food Names           | Quantity  | Price       |\n");
+            System.out.format("+--------------+---------------+----------------------+-----------+-------------+\n");
             //rs.beforeFirst();
             while (rs.next())
             {
 
-                System.out.format(leftAlignFormat, rs.getInt(2), rs.getString(3), "", "", "");
+                System.out.format(leftAlignFormat, rs.getString(3), rs.getString(6), "", "", "");
                 itemNo_Quantity = rs.getString(4);
                 int p1 = 0;
                 for (int i = 0; i < itemNo_Quantity.length(); i += 5) {
@@ -226,11 +226,10 @@ public class HomeDeliveryList extends AccessDatabase
                     rs1.next();
                     quantity[i] = Integer.parseInt(Character.toString(itemNo_Quantity.charAt(i + 3)));
                     int p = rs1.getInt(4) * quantity[i];
-                    p1 += p;
                     System.out.format(leftAlignFormat, "", "", rs1.getString(3), quantity[i] + " pcs", p);
                 }
                 System.out.format("+-------------------------------------------------------------------------------+\n");
-                System.out.format(leftAlignFormat2, "", "Total :", p1);
+                System.out.format(leftAlignFormat2, "", "Total :", rs.getString(5));
                 System.out.format("+-------------------------------------------------------------------------------+\n");
             }
             /*else
