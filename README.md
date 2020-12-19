@@ -1,5 +1,5 @@
-## Presentation Video Link
-[a link](https://youtu.be/IflGqE3Cc9k)
+## Presentation Video
+[YouTube Link](https://youtu.be/IflGqE3Cc9k)
 
 ## Getting Started
 This is my second JAVA Project with DATABASE. The project is made in IntelliJ IDEA with XAMPP [MySQL DATABASE].
